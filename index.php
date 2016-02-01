@@ -78,6 +78,22 @@
 		return $stmt->fetch();
 	}
 	
+	function getCount() {
+		global $dbConn;
+		$sql = "SELECT COUNT(*) FROM games_info";
+		$stmt = $dbConn -> prepare($sql);
+		$stmt -> execute();
+		return $stmt->fetch();
+	}
+	
+	function getAvgPrice() {
+		global $dbConn;
+		$sql = "SELECT AVG(gamePrice) FROM games_info;";
+		$stmt = $dbConn -> prepare($sql);
+		$stmt -> execute();
+		return $stmt->fetch();
+	}
+	
 	//Gets piblishers, genres and ratings
 	$gamePublishers = getList('game_publishers', 'publisherName');
 	$gameGenres = getList('game_genres','genreName');
@@ -162,6 +178,13 @@
 					
 					
 				</form>
+				
+				<?php
+				$totalCount = getCount();
+				$avgPrice = getAvgPrice();
+				echo "<p>Total Games: " . $totalCount[0] . "</p>";
+				echo "<p>Average Price: \$" . number_format($avgPrice[0], 2) . "</p> <br>";
+			?>
 			</nav>
 				<?php 
 					if (isset($_POST['moreInfo'])) {
@@ -188,7 +211,7 @@
 							echo "<div class=\"gameProfile\">";
 							echo "<img src = \"images\\" . $game['gameId'] . ".jpg\" class = \"gameArt\" height = \"190px\" width = \"150px\">";
 							echo "<h5>". $game['gameTitle'] . "</h5>";
-							echo "<p>". $game['gamePrice'] . "</p>";
+							echo "<p>\$". $game['gamePrice'] . "</p>";
 							echo "<form method=\"POST\">";
 								echo "<input type=\"submit\" name=\"moreInfo\" value=\"More Info\"/>";
 								echo "<input type=\"hidden\" name=\"gameId\" value=\"" . $game['gameId'] . "\"/>";
@@ -197,6 +220,9 @@
 						}
 					?>
 			</div>
+			
+			
+			
 		</div>
 	</body>
 </html>
