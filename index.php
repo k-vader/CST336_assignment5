@@ -1,5 +1,5 @@
 <?php 
-	require '../db_connection.php';
+	require 'db_connection.php';;
 	
 	//Gets all games sorted by title
 	function getGames() {
@@ -116,8 +116,9 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<title>new_file</title>
-		<link rel="stylesheet" type="text/css" href="css/main.css" />
+		<title>GAME STOP</title>
+		<link rel="stylesheet" type="text/css" href="main.css" />
+		<link href='https://fonts.googleapis.com/css?family=Black+Ops+One' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
 		<div id="wrapper">
@@ -182,9 +183,9 @@
 				<?php
 				$totalCount = getCount();
 				$avgPrice = getAvgPrice();
-				echo "<p>Total Games: " . $totalCount[0] . "</p>";
-				echo "<p>Average Price: \$" . number_format($avgPrice[0], 2) . "</p> <br>";
-			?>
+				echo "<h2>Total Games: " . $totalCount[0] . "</h2>";
+				echo "<h4>Average Price: \$" . number_format($avgPrice[0], 2) . "</h4>";
+				?>
 			</nav>
 				<?php 
 					if (isset($_POST['moreInfo'])) {
@@ -193,8 +194,8 @@
 						$currentRating = getRating($gameInfo['gameRating']);
 						$currentPublisher = getPublisher($gameInfo['gamePublisher']);
 						echo "<div id=\"moreInfoPanel\">";
-						echo "<img src = \"images\\" . $gameInfo['gameId'] . ".jpg\" class = \"gameArt\" height = \"295px\" width = \"225px\">";
-						echo "<h5>". $gameInfo['gameTitle'] . "</h5>";
+						echo "<img src = \"_images/_boxart/" . $gameInfo['gameId'] . ".jpg\" class = \"gameArt\" height = \"295px\" width = \"225px\">";
+						echo "<h3>". $gameInfo['gameTitle'] . "</h3>";
 						echo "<p> Players: " . $gameInfo['players'] . "</p>";
 						echo "<p> Co-Op Play: " . $gameInfo['co-op'] . "</p>";
 						echo "<p>Rating: ". $currentRating[0] . "</p>";
@@ -205,11 +206,11 @@
 						echo "</div>";
 					}
 				?>
-			<div id="gamesList">
+			<div id="gameList">
 					<?php 
 						foreach ($gameNames as $game) {
 							echo "<div class=\"gameProfile\">";
-							echo "<img src = \"images\\" . $game['gameId'] . ".jpg\" class = \"gameArt\" height = \"190px\" width = \"150px\">";
+							echo "<img src = \"_images/_boxart/" . $game['gameId'] . ".jpg\" class = \"gameArt\" height = \"190px\" width = \"150px\">";
 							echo "<h5>". $game['gameTitle'] . "</h5>";
 							echo "<p>\$". $game['gamePrice'] . "</p>";
 							echo "<form method=\"POST\">";

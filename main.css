@@ -1,0 +1,152 @@
+* {
+	padding: 0px; margin: 0px;
+	font-family: sans-serif;
+}
+
+body {
+	padding: 0px;
+	margin: 0px;
+	background-color: #ffffff;
+}
+
+header {
+	overflow: hidden;
+}
+
+h1 {
+	font-family: 'Black Ops One', sans-serif;
+	font-size: 3em;
+	color: 	#C1C1A4;
+}
+
+h2 {
+	font-family: 'Black Ops One', sans-serif;
+	font-size: 1.75em;
+	margin: 25px 0px 0px 0px;
+	color: 	#C1C1A4;
+}
+
+h3 {
+	padding: 55px 0px 0px 0px;
+	color: #FF6600;
+}
+
+h4 {
+	margin: 0px 0px 50px 0px;
+	font-family: 'Black Ops One', sans-serif;
+	color: #FF6600;	
+}
+
+h5 {
+	margin: 10px 0px 0px 0px;
+	font-size: .95em;
+	color: #FF6600;
+}
+
+.clear {
+	clear: both;	
+}
+
+#nav {
+	margin: 0px;	
+}
+
+#wrapper {
+	width: 1000px;
+	margin: 0px auto;
+	padding: 0px;
+	background-color: #ffffff;
+	overflow: hidden;
+}
+
+#gameList {
+	overflow: hidden;
+	width: 874px;
+	margin: 0px auto;
+}
+
+.gameProfile {
+	width: 400px;
+	padding: 5px;
+	margin: 12px;
+	float: left;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 12px 0 rgba(0, 0, 0, 0.19);
+}
+
+.gameArt {
+	float: left;
+	margin: 10px;
+}
+
+input[type=submit] {
+	color: white;
+	background-color: #ff6600;
+	margin: 10px 30px 0px 0px;
+	padding: 3px 8px;
+	border: none;
+	border-radius: 20px			
+}
+			
+input[type=submit]:hover{
+	background-color: white;
+	color: #ff6600;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	border: none;
+}
+
+header input[type=submit] {
+	color: #ff6600;
+	background-color: white;
+	margin: 0px;
+	padding: 3px 8px;
+	border: none;
+	border-radius: 20px;
+	float: right;		
+}
+			
+header input[type=submit]:hover {
+	color: #800000;
+	box-shadow: none;
+	border: none;
+}
+
+a {
+	font-size: .85em;
+	color: #ff6600;
+	text-decoration: none;
+}
+
+header a {
+	float: right;
+}
+
+#moreInfoPanel {
+	height: 400px;
+	width: 1000px;
+	margin: 10px 0px;
+	background-color: #FFFFFF;
+	box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	border-top: solid 2px black;
+	border-bottom: solid 2px black;
+}
+
+#moreInfoPanel img {
+	margin: 50px 25px 0px 200px;
+}
+
+#update {
+	width: 500px;
+	height: 200px;
+	margin: 25px auto;
+	padding: 50px;
+	box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+input[type=text] {
+	width: 250px;
+	height: 30px;
+	margin: 0px 0px 10px 0px;
+	font-size: 1.1em;
+	color: #BFBFBF;
+	border: none; 
+	}
