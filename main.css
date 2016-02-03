@@ -78,12 +78,19 @@ h5 {
 	margin: 10px;
 }
 
+input[type=button] {
+	color: white;
+	background-color: #ff6600;
+	margin: 10px 30px 0px 0px;
+	padding: 3px 8px;
+	border-radius: 20px			
+}
+			
 input[type=submit] {
 	color: white;
 	background-color: #ff6600;
 	margin: 10px 30px 0px 0px;
 	padding: 3px 8px;
-	border: none;
 	border-radius: 20px			
 }
 			
@@ -148,5 +155,5 @@ input[type=text] {
 	margin: 0px 0px 10px 0px;
 	font-size: 1.1em;
 	color: #BFBFBF;
-	border: none; 
+	border: 1px solid #dadada;
 	}

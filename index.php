@@ -1,6 +1,15 @@
 <?php 
-	require 'db_connection.php';;
-	
+
+	require 'db_connection.php';
+	include 'global.php';
+
+	// Start the session
+	session_start();
+
+	if(!(isset($_SESSION['user']))) {
+		header("Location: $loginURL");
+	}
+
 	//Gets all games sorted by title
 	function getGames() {
 		global $dbConn;
@@ -123,11 +132,17 @@
 	<body>
 		<div id="wrapper">
 			<header>
-				<form method="post" action="logout.php">
+				<form method="post" action="logs.php">
+					<input type="submit" value="Logs"/>
+				</form>
+				<form method="post" action="login.php">
 					<input type="submit" value="Logout"/>
 				</form>
+				<form method="post" action="updatepassword.php">
+					<input type="submit" value="Update Password"/>
+				</form>
 				<form method="post" action="update_db.php">
-					<input type="submit" value="Update"/>
+					<input type="submit" value="Update DB"/>
 				</form>
 				<h1>Game Stop</h1>
 			</header>
